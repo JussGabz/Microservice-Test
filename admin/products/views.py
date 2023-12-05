@@ -47,7 +47,7 @@ class ProductViewSet(viewsets.ViewSet):
         product = Product.objects.get(id=pk)
         # Delete/Destroy
         product.delete()
-        publish('product_created', pk)
+        publish('product_deleted', pk)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class UserAPIView(APIView):
